@@ -1,0 +1,14 @@
+{
+  "model": "vit_base_patch14_dinov2.lvd142m",
+  "mode": "dinov2",
+  "n_cal": 8,
+  "n_eval": 2048,
+  "k_floor": 10,
+  "sweep": [
+    {"tau": 0.90, "metric": 0.8406, "mean_k_over_dh": 0.580},
+    {"tau": 0.93, "metric": 0.8715, "mean_k_over_dh": 0.614},
+    {"tau": 0.95, "metric": 0.8995, "mean_k_over_dh": 0.647},
+    {"tau": 0.97, "metric": 0.9230, "mean_k_over_dh": 0.691},
+    {"tau": 0.99, "metric": 0.9516439475119114, "mean_k_over_dh": 0.7583705357142857}
+  ]
+}

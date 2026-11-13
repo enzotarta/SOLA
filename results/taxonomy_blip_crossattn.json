@@ -1,0 +1,1015 @@
+{
+  "model": "blip_crossattn_base",
+  "K": 0,
+  "n_batches": 100,
+  "results": [
+    {
+      "layer": 0,
+      "head": 0,
+      "category": "fixed_target",
+      "diag": {},
+      "mean_kernel": null
+    },
+    {
+      "layer": 0,
+      "head": 1,
+      "category": "fixed_target",
+      "diag": {},
+      "mean_kernel": null
+    },
+    {
+      "layer": 0,
+      "head": 2,
+      "category": "fixed_target",
+      "diag": {},
+      "mean_kernel": null
+    },
+    {
+      "layer": 0,
+      "head": 3,
+      "category": "fixed_target",
+      "diag": {},
+      "mean_kernel": null
+    },
+    {
+      "layer": 0,
+      "head": 4,
+      "category": "fixed_target",
+      "diag": {},
+      "mean_kernel": null
+    },
+    {
+      "layer": 0,
+      "head": 5,
+      "category": "fixed_target",
+      "diag": {},
+      "mean_kernel": null
+    },
+    {
+      "layer": 0,
+      "head": 6,
+      "category": "fixed_target",
+      "diag": {},
+      "mean_kernel": null
+    },
+    {
+      "layer": 0,
+      "head": 7,
+      "category": "fixed_target",
+      "diag": {},
+      "mean_kernel": null
+    },
+    {
+      "layer": 0,
+      "head": 8,
+      "category": "fixed_target",
+      "diag": {},
+      "mean_kernel": null
+    },
+    {
+      "layer": 0,
+      "head": 9,
+      "category": "fixed_target",
+      "diag": {},
+      "mean_kernel": null
+    },
+    {
+      "layer": 0,
+      "head": 10,
+      "category": "fixed_target",
+      "diag": {},
+      "mean_kernel": null
+    },
+    {
+      "layer": 0,
+      "head": 11,
+      "category": "fixed_target",
+      "diag": {},
+      "mean_kernel": null
+    },
+    {
+      "layer": 1,
+      "head": 0,
+      "category": "fixed_target",
+      "diag": {},
+      "mean_kernel": null
+    },
+    {
+      "layer": 1,
+      "head": 1,
+      "category": "fixed_target",
+      "diag": {},
+      "mean_kernel": null
+    },
+    {
+      "layer": 1,
+      "head": 2,
+      "category": "fixed_target",
+      "diag": {},
+      "mean_kernel": null
+    },
+    {
+      "layer": 1,
+      "head": 3,
+      "category": "fixed_target",
+      "diag": {},
+      "mean_kernel": null
+    },
+    {
+      "layer": 1,
+      "head": 4,
+      "category": "fixed_target",
+      "diag": {},
+      "mean_kernel": null
+    },
+    {
+      "layer": 1,
+      "head": 5,
+      "category": "fixed_target",
+      "diag": {},
+      "mean_kernel": null
+    },
+    {
+      "layer": 1,
+      "head": 6,
+      "category": "fixed_target",
+      "diag": {},
+      "mean_kernel": null
+    },
+    {
+      "layer": 1,
+      "head": 7,
+      "category": "fixed_target",
+      "diag": {},
+      "mean_kernel": null
+    },
+    {
+      "layer": 1,
+      "head": 8,
+      "category": "fixed_target",
+      "diag": {},
+      "mean_kernel": null
+    },
+    {
+      "layer": 1,
+      "head": 9,
+      "category": "fixed_target",
+      "diag": {},
+      "mean_kernel": null
+    },
+    {
+      "layer": 1,
+      "head": 10,
+      "category": "fixed_target",
+      "diag": {},
+      "mean_kernel": null
+    },
+    {
+      "layer": 1,
+      "head": 11,
+      "category": "fixed_target",
+      "diag": {},
+      "mean_kernel": null
+    },
+    {
+      "layer": 2,
+      "head": 0,
+      "category": "fixed_target",
+      "diag": {},
+      "mean_kernel": null
+    },
+    {
+      "layer": 2,
+      "head": 1,
+      "category": "fixed_target",
+      "diag": {},
+      "mean_kernel": null
+    },
+    {
+      "layer": 2,
+      "head": 2,
+      "category": "fixed_target",
+      "diag": {},
+      "mean_kernel": null
+    },
+    {
+      "layer": 2,
+      "head": 3,
+      "category": "fixed_target",
+      "diag": {},
+      "mean_kernel": null
+    },
+    {
+      "layer": 2,
+      "head": 4,
+      "category": "fixed_target",
+      "diag": {},
+      "mean_kernel": null
+    },
+    {
+      "layer": 2,
+      "head": 5,
+      "category": "fixed_target",
+      "diag": {},
+      "mean_kernel": null
+    },
+    {
+      "layer": 2,
+      "head": 6,
+      "category": "fixed_target",
+      "diag": {},
+      "mean_kernel": null
+    },
+    {
+      "layer": 2,
+      "head": 7,
+      "category": "fixed_target",
+      "diag": {},
+      "mean_kernel": null
+    },
+    {
+      "layer": 2,
+      "head": 8,
+      "category": "fixed_target",
+      "diag": {},
+      "mean_kernel": null
+    },
+    {
+      "layer": 2,
+      "head": 9,
+      "category": "fixed_target",
+      "diag": {},
+      "mean_kernel": null
+    },
+    {
+      "layer": 2,
+      "head": 10,
+      "category": "fixed_target",
+      "diag": {},
+      "mean_kernel": null
+    },
+    {
+      "layer": 2,
+      "head": 11,
+      "category": "fixed_target",
+      "diag": {},
+      "mean_kernel": null
+    },
+    {
+      "layer": 3,
+      "head": 0,
+      "category": "fixed_target",
+      "diag": {},
+      "mean_kernel": null
+    },
+    {
+      "layer": 3,
+      "head": 1,
+      "category": "fixed_target",
+      "diag": {},
+      "mean_kernel": null
+    },
+    {
+      "layer": 3,
+      "head": 2,
+      "category": "fixed_target",
+      "diag": {},
+      "mean_kernel": null
+    },
+    {
+      "layer": 3,
+      "head": 3,
+      "category": "fixed_target",
+      "diag": {},
+      "mean_kernel": null
+    },
+    {
+      "layer": 3,
+      "head": 4,
+      "category": "fixed_target",
+      "diag": {},
+      "mean_kernel": null
+    },
+    {
+      "layer": 3,
+      "head": 5,
+      "category": "fixed_target",
+      "diag": {},
+      "mean_kernel": null
+    },
+    {
+      "layer": 3,
+      "head": 6,
+      "category": "fixed_target",
+      "diag": {},
+      "mean_kernel": null
+    },
+    {
+      "layer": 3,
+      "head": 7,
+      "category": "fixed_target",
+      "diag": {},
+      "mean_kernel": null
+    },
+    {
+      "layer": 3,
+      "head": 8,
+      "category": "fixed_target",
+      "diag": {},
+      "mean_kernel": null
+    },
+    {
+      "layer": 3,
+      "head": 9,
+      "category": "fixed_target",
+      "diag": {},
+      "mean_kernel": null
+    },
+    {
+      "layer": 3,
+      "head": 10,
+      "category": "fixed_target",
+      "diag": {},
+      "mean_kernel": null
+    },
+    {
+      "layer": 3,
+      "head": 11,
+      "category": "fixed_target",
+      "diag": {},
+      "mean_kernel": null
+    },
+    {
+      "layer": 4,
+      "head": 0,
+      "category": "fixed_target",
+      "diag": {},
+      "mean_kernel": null
+    },
+    {
+      "layer": 4,
+      "head": 1,
+      "category": "fixed_target",
+      "diag": {},
+      "mean_kernel": null
+    },
+    {
+      "layer": 4,
+      "head": 2,
+      "category": "fixed_target",
+      "diag": {},
+      "mean_kernel": null
+    },
+    {
+      "layer": 4,
+      "head": 3,
+      "category": "fixed_target",
+      "diag": {},
+      "mean_kernel": null
+    },
+    {
+      "layer": 4,
+      "head": 4,
+      "category": "fixed_target",
+      "diag": {},
+      "mean_kernel": null
+    },
+    {
+      "layer": 4,
+      "head": 5,
+      "category": "fixed_target",
+      "diag": {},
+      "mean_kernel": null
+    },
+    {
+      "layer": 4,
+      "head": 6,
+      "category": "fixed_target",
+      "diag": {},
+      "mean_kernel": null
+    },
+    {
+      "layer": 4,
+      "head": 7,
+      "category": "fixed_target",
+      "diag": {},
+      "mean_kernel": null
+    },
+    {
+      "layer": 4,
+      "head": 8,
+      "category": "fixed_target",
+      "diag": {},
+      "mean_kernel": null
+    },
+    {
+      "layer": 4,
+      "head": 9,
+      "category": "fixed_target",
+      "diag": {},
+      "mean_kernel": null
+    },
+    {
+      "layer": 4,
+      "head": 10,
+      "category": "fixed_target",
+      "diag": {},
+      "mean_kernel": null
+    },
+    {
+      "layer": 4,
+      "head": 11,
+      "category": "fixed_target",
+      "diag": {},
+      "mean_kernel": null
+    },
+    {
+      "layer": 5,
+      "head": 0,
+      "category": "fixed_target",
+      "diag": {},
+      "mean_kernel": null
+    },
+    {
+      "layer": 5,
+      "head": 1,
+      "category": "fixed_target",
+      "diag": {},
+      "mean_kernel": null
+    },
+    {
+      "layer": 5,
+      "head": 2,
+      "category": "fixed_target",
+      "diag": {},
+      "mean_kernel": null
+    },
+    {
+      "layer": 5,
+      "head": 3,
+      "category": "fixed_target",
+      "diag": {},
+      "mean_kernel": null
+    },
+    {
+      "layer": 5,
+      "head": 4,
+      "category": "fixed_target",
+      "diag": {},
+      "mean_kernel": null
+    },
+    {
+      "layer": 5,
+      "head": 5,
+      "category": "fixed_target",
+      "diag": {},
+      "mean_kernel": null
+    },
+    {
+      "layer": 5,
+      "head": 6,
+      "category": "fixed_target",
+      "diag": {},
+      "mean_kernel": null
+    },
+    {
+      "layer": 5,
+      "head": 7,
+      "category": "fixed_target",
+      "diag": {},
+      "mean_kernel": null
+    },
+    {
+      "layer": 5,
+      "head": 8,
+      "category": "fixed_target",
+      "diag": {},
+      "mean_kernel": null
+    },
+    {
+      "layer": 5,
+      "head": 9,
+      "category": "fixed_target",
+      "diag": {},
+      "mean_kernel": null
+    },
+    {
+      "layer": 5,
+      "head": 10,
+      "category": "fixed_target",
+      "diag": {},
+      "mean_kernel": null
+    },
+    {
+      "layer": 5,
+      "head": 11,
+      "category": "fixed_target",
+      "diag": {},
+      "mean_kernel": null
+    },
+    {
+      "layer": 6,
+      "head": 0,
+      "category": "fixed_target",
+      "diag": {},
+      "mean_kernel": null
+    },
+    {
+      "layer": 6,
+      "head": 1,
+      "category": "fixed_target",
+      "diag": {},
+      "mean_kernel": null
+    },
+    {
+      "layer": 6,
+      "head": 2,
+      "category": "fixed_target",
+      "diag": {},
+      "mean_kernel": null
+    },
+    {
+      "layer": 6,
+      "head": 3,
+      "category": "fixed_target",
+      "diag": {},
+      "mean_kernel": null
+    },
+    {
+      "layer": 6,
+      "head": 4,
+      "category": "fixed_target",
+      "diag": {},
+      "mean_kernel": null
+    },
+    {
+      "layer": 6,
+      "head": 5,
+      "category": "fixed_target",
+      "diag": {},
+      "mean_kernel": null
+    },
+    {
+      "layer": 6,
+      "head": 6,
+      "category": "fixed_target",
+      "diag": {},
+      "mean_kernel": null
+    },
+    {
+      "layer": 6,
+      "head": 7,
+      "category": "fixed_target",
+      "diag": {},
+      "mean_kernel": null
+    },
+    {
+      "layer": 6,
+      "head": 8,
+      "category": "fixed_target",
+      "diag": {},
+      "mean_kernel": null
+    },
+    {
+      "layer": 6,
+      "head": 9,
+      "category": "fixed_target",
+      "diag": {},
+      "mean_kernel": null
+    },
+    {
+      "layer": 6,
+      "head": 10,
+      "category": "fixed_target",
+      "diag": {},
+      "mean_kernel": null
+    },
+    {
+      "layer": 6,
+      "head": 11,
+      "category": "fixed_target",
+      "diag": {},
+      "mean_kernel": null
+    },
+    {
+      "layer": 7,
+      "head": 0,
+      "category": "fixed_target",
+      "diag": {},
+      "mean_kernel": null
+    },
+    {
+      "layer": 7,
+      "head": 1,
+      "category": "fixed_target",
+      "diag": {},
+      "mean_kernel": null
+    },
+    {
+      "layer": 7,
+      "head": 2,
+      "category": "fixed_target",
+      "diag": {},
+      "mean_kernel": null
+    },
+    {
+      "layer": 7,
+      "head": 3,
+      "category": "fixed_target",
+      "diag": {},
+      "mean_kernel": null
+    },
+    {
+      "layer": 7,
+      "head": 4,
+      "category": "fixed_target",
+      "diag": {},
+      "mean_kernel": null
+    },
+    {
+      "layer": 7,
+      "head": 5,
+      "category": "fixed_target",
+      "diag": {},
+      "mean_kernel": null
+    },
+    {
+      "layer": 7,
+      "head": 6,
+      "category": "fixed_target",
+      "diag": {},
+      "mean_kernel": null
+    },
+    {
+      "layer": 7,
+      "head": 7,
+      "category": "fixed_target",
+      "diag": {},
+      "mean_kernel": null
+    },
+    {
+      "layer": 7,
+      "head": 8,
+      "category": "fixed_target",
+      "diag": {},
+      "mean_kernel": null
+    },
+    {
+      "layer": 7,
+      "head": 9,
+      "category": "fixed_target",
+      "diag": {},
+      "mean_kernel": null
+    },
+    {
+      "layer": 7,
+      "head": 10,
+      "category": "fixed_target",
+      "diag": {},
+      "mean_kernel": null
+    },
+    {
+      "layer": 7,
+      "head": 11,
+      "category": "fixed_target",
+      "diag": {},
+      "mean_kernel": null
+    },
+    {
+      "layer": 8,
+      "head": 0,
+      "category": "fixed_target",
+      "diag": {},
+      "mean_kernel": null
+    },
+    {
+      "layer": 8,
+      "head": 1,
+      "category": "fixed_target",
+      "diag": {},
+      "mean_kernel": null
+    },
+    {
+      "layer": 8,
+      "head": 2,
+      "category": "fixed_target",
+      "diag": {},
+      "mean_kernel": null
+    },
+    {
+      "layer": 8,
+      "head": 3,
+      "category": "fixed_target",
+      "diag": {},
+      "mean_kernel": null
+    },
+    {
+      "layer": 8,
+      "head": 4,
+      "category": "fixed_target",
+      "diag": {},
+      "mean_kernel": null
+    },
+    {
+      "layer": 8,
+      "head": 5,
+      "category": "fixed_target",
+      "diag": {},
+      "mean_kernel": null
+    },
+    {
+      "layer": 8,
+      "head": 6,
+      "category": "fixed_target",
+      "diag": {},
+      "mean_kernel": null
+    },
+    {
+      "layer": 8,
+      "head": 7,
+      "category": "fixed_target",
+      "diag": {},
+      "mean_kernel": null
+    },
+    {
+      "layer": 8,
+      "head": 8,
+      "category": "fixed_target",
+      "diag": {},
+      "mean_kernel": null
+    },
+    {
+      "layer": 8,
+      "head": 9,
+      "category": "fixed_target",
+      "diag": {},
+      "mean_kernel": null
+    },
+    {
+      "layer": 8,
+      "head": 10,
+      "category": "fixed_target",
+      "diag": {},
+      "mean_kernel": null
+    },
+    {
+      "layer": 8,
+      "head": 11,
+      "category": "fixed_target",
+      "diag": {},
+      "mean_kernel": null
+    },
+    {
+      "layer": 9,
+      "head": 0,
+      "category": "fixed_target",
+      "diag": {},
+      "mean_kernel": null
+    },
+    {
+      "layer": 9,
+      "head": 1,
+      "category": "fixed_target",
+      "diag": {},
+      "mean_kernel": null
+    },
+    {
+      "layer": 9,
+      "head": 2,
+      "category": "fixed_target",
+      "diag": {},
+      "mean_kernel": null
+    },
+    {
+      "layer": 9,
+      "head": 3,
+      "category": "fixed_target",
+      "diag": {},
+      "mean_kernel": null
+    },
+    {
+      "layer": 9,
+      "head": 4,
+      "category": "fixed_target",
+      "diag": {},
+      "mean_kernel": null
+    },
+    {
+      "layer": 9,
+      "head": 5,
+      "category": "fixed_target",
+      "diag": {},
+      "mean_kernel": null
+    },
+    {
+      "layer": 9,
+      "head": 6,
+      "category": "fixed_target",
+      "diag": {},
+      "mean_kernel": null
+    },
+    {
+      "layer": 9,
+      "head": 7,
+      "category": "fixed_target",
+      "diag": {},
+      "mean_kernel": null
+    },
+    {
+      "layer": 9,
+      "head": 8,
+      "category": "fixed_target",
+      "diag": {},
+      "mean_kernel": null
+    },
+    {
+      "layer": 9,
+      "head": 9,
+      "category": "fixed_target",
+      "diag": {},
+      "mean_kernel": null
+    },
+    {
+      "layer": 9,
+      "head": 10,
+      "category": "fixed_target",
+      "diag": {},
+      "mean_kernel": null
+    },
+    {
+      "layer": 9,
+      "head": 11,
+      "category": "fixed_target",
+      "diag": {},
+      "mean_kernel": null
+    },
+    {
+      "layer": 10,
+      "head": 0,
+      "category": "fixed_target",
+      "diag": {},
+      "mean_kernel": null
+    },
+    {
+      "layer": 10,
+      "head": 1,
+      "category": "fixed_target",
+      "diag": {},
+      "mean_kernel": null
+    },
+    {
+      "layer": 10,
+      "head": 2,
+      "category": "fixed_target",
+      "diag": {},
+      "mean_kernel": null
+    },
+    {
+      "layer": 10,
+      "head": 3,
+      "category": "fixed_target",
+      "diag": {},
+      "mean_kernel": null
+    },
+    {
+      "layer": 10,
+      "head": 4,
+      "category": "fixed_target",
+      "diag": {},
+      "mean_kernel": null
+    },
+    {
+      "layer": 10,
+      "head": 5,
+      "category": "fixed_target",
+      "diag": {},
+      "mean_kernel": null
+    },
+    {
+      "layer": 10,
+      "head": 6,
+      "category": "fixed_target",
+      "diag": {},
+      "mean_kernel": null
+    },
+    {
+      "layer": 10,
+      "head": 7,
+      "category": "fixed_target",
+      "diag": {},
+      "mean_kernel": null
+    },
+    {
+      "layer": 10,
+      "head": 8,
+      "category": "fixed_target",
+      "diag": {},
+      "mean_kernel": null
+    },
+    {
+      "layer": 10,
+      "head": 9,
+      "category": "fixed_target",
+      "diag": {},
+      "mean_kernel": null
+    },
+    {
+      "layer": 10,
+      "head": 10,
+      "category": "fixed_target",
+      "diag": {},
+      "mean_kernel": null
+    },
+    {
+      "layer": 10,
+      "head": 11,
+      "category": "fixed_target",
+      "diag": {},
+      "mean_kernel": null
+    },
+    {
+      "layer": 11,
+      "head": 0,
+      "category": "fixed_target",
+      "diag": {},
+      "mean_kernel": null
+    },
+    {
+      "layer": 11,
+      "head": 1,
+      "category": "fixed_target",
+      "diag": {},
+      "mean_kernel": null
+    },
+    {
+      "layer": 11,
+      "head": 2,
+      "category": "fixed_target",
+      "diag": {},
+      "mean_kernel": null
+    },
+    {
+      "layer": 11,
+      "head": 3,
+      "category": "fixed_target",
+      "diag": {},
+      "mean_kernel": null
+    },
+    {
+      "layer": 11,
+      "head": 4,
+      "category": "fixed_target",
+      "diag": {},
+      "mean_kernel": null
+    },
+    {
+      "layer": 11,
+      "head": 5,
+      "category": "fixed_target",
+      "diag": {},
+      "mean_kernel": null
+    },
+    {
+      "layer": 11,
+      "head": 6,
+      "category": "fixed_target",
+      "diag": {},
+      "mean_kernel": null
+    },
+    {
+      "layer": 11,
+      "head": 7,
+      "category": "fixed_target",
+      "diag": {},
+      "mean_kernel": null
+    },
+    {
+      "layer": 11,
+      "head": 8,
+      "category": "fixed_target",
+      "diag": {},
+      "mean_kernel": null
+    },
+    {
+      "layer": 11,
+      "head": 9,
+      "category": "fixed_target",
+      "diag": {},
+      "mean_kernel": null
+    },
+    {
+      "layer": 11,
+      "head": 10,
+      "category": "fixed_target",
+      "diag": {},
+      "mean_kernel": null
+    },
+    {
+      "layer": 11,
+      "head": 11,
+      "category": "fixed_target",
+      "diag": {},
+      "mean_kernel": null
+    }
+  ]
+}

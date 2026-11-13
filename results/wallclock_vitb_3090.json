@@ -1,0 +1,90 @@
+{
+  "model": "vit_base_patch16_224.augreg2_in21k_ft_in1k",
+  "shift_heads": [
+    [
+      1,
+      10
+    ],
+    [
+      2,
+      3
+    ],
+    [
+      2,
+      6
+    ],
+    [
+      3,
+      1
+    ]
+  ],
+  "n_shift_heads": 4,
+  "top_shift_layer": 2,
+  "top_shift_layer_count": 2,
+  "sizes": {
+    "224": {
+      "n_tokens": 197,
+      "n_heads": 12,
+      "baseline_e2e_ms": {
+        "mean": 77.22139743804932,
+        "std": 0.4813002664285217
+      },
+      "fused_e2e_ms": {
+        "mean": 79.37288875579834,
+        "std": 0.45339539749590074
+      },
+      "triton_e2e_ms": {
+        "mean": 78.05274002075195,
+        "std": 0.480375791093622
+      },
+      "triton_sb_e2e_ms": {
+        "mean": 80.01600177764892,
+        "std": 0.39385730659054474
+      },
+      "baseline_block_ms": {
+        "mean": 2.677917114496231,
+        "std": 0.011937802626866098
+      },
+      "fused_block_ms": {
+        "mean": 3.0543121790885923,
+        "std": 0.010802327963444092
+      },
+      "triton_block_ms": {
+        "mean": 3.0711415922641754,
+        "std": 0.018933796439484903
+      },
+      "triton_sb_block_ms": {
+        "mean": 3.035139025449753,
+        "std": 0.01406770809541434
+      },
+      "sb_baseline_block_ms": {
+        "mean": 2.702155338525772,
+        "std": 0.018800040467653472
+      },
+      "sb_layer": 2,
+      "sb_density": 3,
+      "speedup_e2e_fused": 0.9728938765934502,
+      "speedup_e2e_triton": 0.9893489635023498,
+      "speedup_e2e_triton_sb": 0.9650744316447435,
+      "speedup_block_fused": 0.8767660139099869,
+      "speedup_block_triton": 0.8719614625524177,
+      "speedup_block_triton_sb": 0.8902904663898753,
+      "triton_full_e2e_ms": {
+        "mean": 74.56583847045898,
+        "std": 0.32610992864741706
+      },
+      "triton_full_block_ms": {
+        "mean": 2.4617956745624543,
+        "std": 0.018124431181780937
+      },
+      "speedup_e2e_triton_full": 1.0356136137145753,
+      "speedup_block_triton_full": 1.0976359112362313,
+      "top1_baseline": null,
+      "top1_fused": null,
+      "top1_kernel_sub": null,
+      "top1_triton": null,
+      "top1_triton_sb": null,
+      "top1_triton_full": null
+    }
+  }
+}

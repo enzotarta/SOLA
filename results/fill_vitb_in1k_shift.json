@@ -1,0 +1,10 @@
+{
+  "model": "vit_base_patch16_224.augreg_in1k",
+  "op": "shift",
+  "metric": "top1",
+  "n_heads_tested": 7,
+  "n_eval": 9984,
+  "baseline_top1": 0.8268229166666666,
+  "sub_top1": 0.8237179487179487,
+  "delta_top1": -0.31049679487179516
+}

@@ -1,0 +1,8 @@
+{
+  "model": "vit_base_patch16_clip_224.openai",
+  "op": "rank10_ng",
+  "metric": "cossim",
+  "n_heads_tested": 71,
+  "n_eval": 9984,
+  "cls_cos_sim": 0.9619431484204072
+}

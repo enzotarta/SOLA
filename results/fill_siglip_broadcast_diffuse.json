@@ -1,0 +1,8 @@
+{
+  "model": "vit_base_patch16_siglip_224",
+  "op": "broadcast_diffuse",
+  "metric": "cossim",
+  "n_heads_tested": 5,
+  "n_eval": 9984,
+  "cls_cos_sim": 0.8679681510115281
+}

@@ -1,0 +1,40 @@
+{
+  "model": "vit_base_patch16_224.mae",
+  "img_size": 384,
+  "batch_size": 32,
+  "dtype": "fp32",
+  "gpu_index": 1,
+  "idle_W": 77.30358412856238,
+  "warmup_s": 30.0,
+  "run_s": 60.0,
+  "n_shifts": 9,
+  "n_broadcasts": 11,
+  "conditions": {
+    "baseline": {
+      "tag": "baseline",
+      "n_forwards": 161,
+      "elapsed_s": 63.31206103099976,
+      "sample_dur_s": 63.307447587983916,
+      "avg_W_total": 239.37334368856224,
+      "avg_W_compute": 162.06975955999985,
+      "compute_energy_J": 10260.970508542166,
+      "j_per_forward": 63.732736077901656,
+      "j_per_image": 1.9916480024344267,
+      "ms_per_forward": 393.24261509937736,
+      "batch_size": 32
+    },
+    "triton_sb": {
+      "tag": "triton-S+B",
+      "n_forwards": 157,
+      "elapsed_s": 62.31936586700613,
+      "sample_dur_s": 62.31361645399011,
+      "avg_W_total": 238.83956756341613,
+      "avg_W_compute": 161.53598343485373,
+      "compute_energy_J": 10066.820052363291,
+      "j_per_forward": 64.11987294498911,
+      "j_per_image": 2.0037460295309097,
+      "ms_per_forward": 396.9386360955804,
+      "batch_size": 32
+    }
+  }
+}

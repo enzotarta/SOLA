@@ -1,0 +1,8 @@
+{
+  "model": "vit_base_patch16_224.augreg2_in21k_ft_in1k",
+  "miou_baseline": 0.15907599031925201,
+  "miou_substituted": 0.16059041023254395,
+  "n_present": 92,
+  "n_train": 3000,
+  "n_val": 500
+}

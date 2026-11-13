@@ -218,3 +218,9 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# SOLA: datasets and generated figures stay local
+data/*
+!data/.gitkeep
+figures/*
+!figures/.gitkeep

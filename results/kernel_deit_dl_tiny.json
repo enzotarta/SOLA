@@ -1,0 +1,66 @@
+{
+  "model": "deit_tiny_patch16_224",
+  "categories": [
+    "diffuse_local"
+  ],
+  "selected_heads": [
+    [
+      3,
+      2
+    ]
+  ],
+  "source": "tiny-imagenet",
+  "n_batches": 156,
+  "metric": "top1",
+  "control_A": {
+    "baseline_top1": 0.36164835164835163,
+    "subbed_top1": 0.3536263736263736,
+    "delta_top1": -0.8021978021978016,
+    "delta_top5": -0.5384615384615432,
+    "n_eval": 9100,
+    "ci_half_width": 0.9872078776624037
+  },
+  "control_B": {
+    "baseline_top1": 0.36164835164835163,
+    "trials": [
+      {
+        "seed": 0,
+        "subs": [
+          [
+            8,
+            1
+          ]
+        ],
+        "delta_top1": -7.714285714285713
+      },
+      {
+        "seed": 1,
+        "subs": [
+          [
+            2,
+            2
+          ]
+        ],
+        "delta_top1": -21.79120879120879
+      },
+      {
+        "seed": 2,
+        "subs": [
+          [
+            1,
+            0
+          ]
+        ],
+        "delta_top1": -22.846153846153843
+      }
+    ],
+    "mean_delta_top1": -17.45054945054945,
+    "std_delta_top1": 6.898035996997091
+  },
+  "control_C": {
+    "baseline_top1": 0.36164835164835163,
+    "subbed_top1": 0.28813186813186814,
+    "delta_top1": -7.351648351648349,
+    "delta_top5": -8.989010989010993
+  }
+}

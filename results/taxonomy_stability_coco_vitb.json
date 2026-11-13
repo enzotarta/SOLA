@@ -1,0 +1,24 @@
+{
+  "model": "vit_base_patch16_224.augreg2_in21k_ft_in1k",
+  "per_repeat_flip_rate": [
+    0.1527777777777778,
+    0.08333333333333333,
+    0.11805555555555555,
+    0.2222222222222222,
+    0.1875,
+    0.2152777777777778,
+    0.24305555555555555,
+    0.2569444444444444
+  ],
+  "majority_flip_rate": 0.125,
+  "flip_directions": {
+    "fixed_target->near_global": 81,
+    "self_only->diffuse_local": 1,
+    "diffuse_local->other": 4,
+    "other->near_global": 15,
+    "near_global->fixed_target": 31,
+    "near_global->other": 48,
+    "other->diffuse_local": 30,
+    "near_global->diffuse_local": 3
+  }
+}

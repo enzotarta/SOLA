@@ -1,0 +1,90 @@
+{
+  "model": "vit_base_patch16_224.augreg2_in21k_ft_in1k",
+  "shift_heads": [
+    [
+      1,
+      10
+    ],
+    [
+      2,
+      3
+    ],
+    [
+      2,
+      6
+    ],
+    [
+      3,
+      1
+    ]
+  ],
+  "n_shift_heads": 4,
+  "top_shift_layer": 2,
+  "top_shift_layer_count": 2,
+  "sizes": {
+    "224": {
+      "n_tokens": 197,
+      "n_heads": 12,
+      "baseline_e2e_ms": {
+        "mean": 46.0373037147522,
+        "std": 0.5332058984624348
+      },
+      "fused_e2e_ms": {
+        "mean": 46.45093837738037,
+        "std": 0.4823985352091348
+      },
+      "triton_e2e_ms": {
+        "mean": 46.26634744644165,
+        "std": 0.5362580239398146
+      },
+      "triton_sb_e2e_ms": {
+        "mean": 47.428157291412354,
+        "std": 0.5091135669062351
+      },
+      "baseline_block_ms": {
+        "mean": 1.4691372793912887,
+        "std": 0.013619543660678501
+      },
+      "fused_block_ms": {
+        "mean": 1.6759260791540145,
+        "std": 0.014337929825312646
+      },
+      "triton_block_ms": {
+        "mean": 1.7236017566919326,
+        "std": 0.0163258742641609
+      },
+      "triton_sb_block_ms": {
+        "mean": 1.7007371163368226,
+        "std": 0.018020829629507868
+      },
+      "sb_baseline_block_ms": {
+        "mean": 1.4277020782232284,
+        "std": 0.010124260862881996
+      },
+      "sb_layer": 2,
+      "sb_density": 3,
+      "speedup_e2e_fused": 0.9910952355952922,
+      "speedup_e2e_triton": 0.9950494529105719,
+      "speedup_e2e_triton_sb": 0.9706745179216146,
+      "speedup_block_fused": 0.8766122191575955,
+      "speedup_block_triton": 0.852364691372193,
+      "speedup_block_triton_sb": 0.839460763517834,
+      "triton_full_e2e_ms": {
+        "mean": 44.93611904144287,
+        "std": 0.6970160664284782
+      },
+      "triton_full_block_ms": {
+        "mean": 1.432962083220482,
+        "std": 0.014255209382534552
+      },
+      "speedup_e2e_triton_full": 1.0245055580410436,
+      "speedup_block_triton_full": 0.9963292783117945,
+      "top1_baseline": null,
+      "top1_fused": null,
+      "top1_kernel_sub": null,
+      "top1_triton": null,
+      "top1_triton_sb": null,
+      "top1_triton_full": null
+    }
+  }
+}

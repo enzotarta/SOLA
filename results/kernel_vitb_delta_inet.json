@@ -1,0 +1,113 @@
+{
+  "model": "vit_base_patch16_224",
+  "categories": [
+    "delta_shift"
+  ],
+  "selected_heads": [
+    [
+      1,
+      10
+    ],
+    [
+      2,
+      3
+    ],
+    [
+      2,
+      6
+    ],
+    [
+      3,
+      1
+    ]
+  ],
+  "source": "imagenet-val",
+  "n_batches": 1000,
+  "control_A": {
+    "baseline_top1": 0.8099,
+    "subbed_top1": 0.8119,
+    "delta_top1": 0.20000000000000018,
+    "delta_top5": 0.08200000000000429,
+    "n_eval": 50000,
+    "ci_half_width": 0.34393615127927457
+  },
+  "control_B": {
+    "baseline_top1": 0.8099,
+    "trials": [
+      {
+        "seed": 0,
+        "subs": [
+          [
+            8,
+            6
+          ],
+          [
+            9,
+            3
+          ],
+          [
+            0,
+            10
+          ],
+          [
+            5,
+            10
+          ]
+        ],
+        "delta_top1": -1.6320000000000001
+      },
+      {
+        "seed": 1,
+        "subs": [
+          [
+            3,
+            2
+          ],
+          [
+            1,
+            4
+          ],
+          [
+            5,
+            9
+          ],
+          [
+            2,
+            9
+          ]
+        ],
+        "delta_top1": -1.0279999999999956
+      },
+      {
+        "seed": 2,
+        "subs": [
+          [
+            1,
+            2
+          ],
+          [
+            2,
+            0
+          ],
+          [
+            1,
+            9
+          ],
+          [
+            8,
+            0
+          ]
+        ],
+        "delta_top1": -4.297999999999991
+      }
+    ],
+    "mean_delta_top1": -2.319333333333329,
+    "std_delta_top1": 1.420691224564841
+  },
+  "control_C": {
+    "baseline_top1": 0.8099,
+    "subbed_top1": 0.75128,
+    "delta_top1": -5.862,
+    "delta_top5": -3.2200000000000006
+  }
+}

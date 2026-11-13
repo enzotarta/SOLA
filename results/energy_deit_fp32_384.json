@@ -1,0 +1,40 @@
+{
+  "model": "deit_tiny_patch16_224",
+  "img_size": 384,
+  "batch_size": 64,
+  "dtype": "fp32",
+  "gpu_index": 1,
+  "idle_W": 79.34231869954027,
+  "warmup_s": 30.0,
+  "run_s": 60.0,
+  "n_shifts": 3,
+  "n_broadcasts": 2,
+  "conditions": {
+    "baseline": {
+      "tag": "baseline",
+      "n_forwards": 605,
+      "elapsed_s": 60.90668014099356,
+      "sample_dur_s": 60.9047135419969,
+      "avg_W_total": 241.2933044019388,
+      "avg_W_compute": 161.95098570239853,
+      "compute_energy_J": 9863.896884694608,
+      "j_per_forward": 16.30396179288365,
+      "j_per_image": 0.25474940301380705,
+      "ms_per_forward": 100.67219858015464,
+      "batch_size": 64
+    },
+    "triton_sb": {
+      "tag": "triton-S+B",
+      "n_forwards": 614,
+      "elapsed_s": 60.719082970987074,
+      "sample_dur_s": 60.715433133998886,
+      "avg_W_total": 242.14532531093735,
+      "avg_W_compute": 162.80300661139708,
+      "compute_energy_J": 9885.249266363577,
+      "j_per_forward": 16.09975450547814,
+      "j_per_image": 0.2515586641480959,
+      "ms_per_forward": 98.89101461072813,
+      "batch_size": 64
+    }
+  }
+}

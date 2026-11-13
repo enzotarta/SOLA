@@ -1,0 +1,10 @@
+{
+  "model": "vit_small_patch16_224.augreg_in21k_ft_in1k",
+  "op": "rank10_ng",
+  "metric": "top1",
+  "n_heads_tested": 33,
+  "n_eval": 9984,
+  "baseline_top1": 0.7905649038461539,
+  "sub_top1": 0.7677283653846154,
+  "delta_top1": -2.2836538461538436
+}

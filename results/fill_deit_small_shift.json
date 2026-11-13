@@ -1,0 +1,10 @@
+{
+  "model": "deit_small_patch16_224",
+  "op": "shift",
+  "metric": "top1",
+  "n_heads_tested": 4,
+  "n_eval": 9984,
+  "baseline_top1": 0.8490584935897436,
+  "sub_top1": 0.8496594551282052,
+  "delta_top1": 0.06009615384615641
+}

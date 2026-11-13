@@ -1,0 +1,99 @@
+{
+  "model": "deit_tiny_patch16_224",
+  "categories": [
+    "delta_shift",
+    "soft_shift"
+  ],
+  "selected_heads": [
+    [
+      1,
+      2
+    ],
+    [
+      2,
+      0
+    ],
+    [
+      2,
+      1
+    ]
+  ],
+  "source": "tiny-imagenet",
+  "n_batches": 156,
+  "metric": "top1",
+  "control_A": {
+    "baseline_top1": 0.36164835164835163,
+    "subbed_top1": 0.3465934065934066,
+    "delta_top1": -1.5054945054945035,
+    "delta_top5": -1.758241758241763,
+    "n_eval": 9100,
+    "ci_half_width": 0.9872078776624037
+  },
+  "control_B": {
+    "baseline_top1": 0.36164835164835163,
+    "trials": [
+      {
+        "seed": 0,
+        "subs": [
+          [
+            9,
+            0
+          ],
+          [
+            9,
+            2
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "delta_top1": -25.10989010989011
+      },
+      {
+        "seed": 1,
+        "subs": [
+          [
+            3,
+            2
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            6,
+            1
+          ]
+        ],
+        "delta_top1": -21.164835164835164
+      },
+      {
+        "seed": 2,
+        "subs": [
+          [
+            1,
+            0
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            8,
+            2
+          ]
+        ],
+        "delta_top1": -31.648351648351646
+      }
+    ],
+    "mean_delta_top1": -25.974358974358974,
+    "std_delta_top1": 4.3233096333146985
+  },
+  "control_C": {
+    "baseline_top1": 0.36164835164835163,
+    "subbed_top1": 0.14934065934065935,
+    "delta_top1": -21.230769230769226,
+    "delta_top5": -29.802197802197806
+  }
+}

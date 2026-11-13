@@ -1,0 +1,8 @@
+{
+  "model": "vit_base_patch14_dinov2.lvd142m",
+  "op": "broadcast_diffuse",
+  "metric": "cossim",
+  "n_heads_tested": 7,
+  "n_eval": 2048,
+  "cls_cos_sim": 0.9048892511054873
+}

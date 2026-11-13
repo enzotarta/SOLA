@@ -1,0 +1,19 @@
+{
+  "model": "vit_base_patch16_siglip_224",
+  "tau": 0.99,
+  "k_floor": 10,
+  "n_eval": 10016,
+  "logit_scale": 117.33076477050781,
+  "logit_bias": -12.9324369430542,
+  "timm_hf_max_diff": 0.008128762245178223,
+  "n_shifts": 4,
+  "n_rank_subs": 140,
+  "n_total_heads": 144,
+  "k_min": 10,
+  "k_median": 15,
+  "k_max": 157,
+  "k_mean": 42.92857142857143,
+  "baseline_top1": 0.7589856230031949,
+  "adaptive_top1": 0.6760183706070287,
+  "delta_top1_pct": -8.29672523961662
+}

@@ -1,0 +1,115 @@
+{
+  "model": "vit_small_patch16_224.augreg_in21k_ft_in1k",
+  "categories": [
+    "delta_shift",
+    "soft_shift"
+  ],
+  "selected_heads": [
+    [
+      1,
+      0
+    ],
+    [
+      1,
+      3
+    ],
+    [
+      2,
+      1
+    ],
+    [
+      2,
+      5
+    ]
+  ],
+  "source": "tiny-imagenet",
+  "n_batches": 156,
+  "metric": "top1",
+  "control_A": {
+    "baseline_top1": 0.3974725274725275,
+    "subbed_top1": 0.390989010989011,
+    "delta_top1": -0.6483516483516472,
+    "delta_top5": -0.7802197802197819,
+    "n_eval": 9100,
+    "ci_half_width": 1.005489084271423
+  },
+  "control_B": {
+    "baseline_top1": 0.3974725274725275,
+    "trials": [
+      {
+        "seed": 0,
+        "subs": [
+          [
+            8,
+            5
+          ],
+          [
+            9,
+            3
+          ],
+          [
+            0,
+            5
+          ],
+          [
+            6,
+            1
+          ]
+        ],
+        "delta_top1": -13.978021978021982
+      },
+      {
+        "seed": 1,
+        "subs": [
+          [
+            3,
+            3
+          ],
+          [
+            1,
+            4
+          ],
+          [
+            6,
+            0
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        "delta_top1": -35.62637362637363
+      },
+      {
+        "seed": 2,
+        "subs": [
+          [
+            1,
+            2
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            0
+          ],
+          [
+            8,
+            2
+          ]
+        ],
+        "delta_top1": -17.78021978021978
+      }
+    ],
+    "mean_delta_top1": -22.461538461538463,
+    "std_delta_top1": 9.437472850988582
+  },
+  "control_C": {
+    "baseline_top1": 0.3974725274725275,
+    "subbed_top1": 0.150989010989011,
+    "delta_top1": -24.64835164835165,
+    "delta_top5": -33.0989010989011
+  }
+}

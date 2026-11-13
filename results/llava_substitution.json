@@ -1,0 +1,462 @@
+{
+  "llava_id": "llava-hf/llava-1.5-7b-hf",
+  "taxonomy": "experiments/taxonomy_clip_L.json",
+  "n_images": 50,
+  "n_shift_heads_substituted": 8,
+  "max_new_tokens": 30,
+  "exact_match_rate": 0.48,
+  "mean_shared_prefix": 5.74,
+  "median_shared_prefix": 5.5,
+  "results": [
+    {
+      "img": "000000000139.jpg",
+      "baseline": "A living room with a table and chairs.",
+      "substituted": "A woman is standing in a kitchen.",
+      "shared_prefix_tokens": 1,
+      "exact_match": false,
+      "n_baseline_tokens": 11,
+      "n_substituted_tokens": 9
+    },
+    {
+      "img": "000000000285.jpg",
+      "baseline": "A brown bear.",
+      "substituted": "A brown bear.",
+      "shared_prefix_tokens": 5,
+      "exact_match": true,
+      "n_baseline_tokens": 5,
+      "n_substituted_tokens": 5
+    },
+    {
+      "img": "000000000632.jpg",
+      "baseline": "A bedroom with a bed and a window.",
+      "substituted": "A bedroom with a bed and a window.",
+      "shared_prefix_tokens": 11,
+      "exact_match": true,
+      "n_baseline_tokens": 11,
+      "n_substituted_tokens": 11
+    },
+    {
+      "img": "000000000724.jpg",
+      "baseline": "A stop sign.",
+      "substituted": "A stop sign.",
+      "shared_prefix_tokens": 5,
+      "exact_match": true,
+      "n_baseline_tokens": 5,
+      "n_substituted_tokens": 5
+    },
+    {
+      "img": "000000000776.jpg",
+      "baseline": "A group of teddy bears.",
+      "substituted": "A pile of teddy bears.",
+      "shared_prefix_tokens": 1,
+      "exact_match": false,
+      "n_baseline_tokens": 9,
+      "n_substituted_tokens": 10
+    },
+    {
+      "img": "000000000785.jpg",
+      "baseline": "A woman skiing on a snowy slope.",
+      "substituted": "A woman skiing.",
+      "shared_prefix_tokens": 4,
+      "exact_match": false,
+      "n_baseline_tokens": 11,
+      "n_substituted_tokens": 6
+    },
+    {
+      "img": "000000000802.jpg",
+      "baseline": "A kitchen with a refrigerator, stove, and cabinets.",
+      "substituted": "A kitchen with a refrigerator, stove, and cabinets.",
+      "shared_prefix_tokens": 17,
+      "exact_match": true,
+      "n_baseline_tokens": 17,
+      "n_substituted_tokens": 17
+    },
+    {
+      "img": "000000000872.jpg",
+      "baseline": "Baseball players playing baseball.",
+      "substituted": "Baseball players playing baseball.",
+      "shared_prefix_tokens": 6,
+      "exact_match": true,
+      "n_baseline_tokens": 6,
+      "n_substituted_tokens": 6
+    },
+    {
+      "img": "000000000885.jpg",
+      "baseline": "A man playing tennis.",
+      "substituted": "A man playing tennis.",
+      "shared_prefix_tokens": 6,
+      "exact_match": true,
+      "n_baseline_tokens": 6,
+      "n_substituted_tokens": 6
+    },
+    {
+      "img": "000000001000.jpg",
+      "baseline": "A group of children posing for a picture.",
+      "substituted": "A group of children posing for a picture.",
+      "shared_prefix_tokens": 11,
+      "exact_match": true,
+      "n_baseline_tokens": 11,
+      "n_substituted_tokens": 11
+    },
+    {
+      "img": "000000001268.jpg",
+      "baseline": "A man sitting on a bench.",
+      "substituted": "A man taking a picture of a bird.",
+      "shared_prefix_tokens": 2,
+      "exact_match": false,
+      "n_baseline_tokens": 9,
+      "n_substituted_tokens": 10
+    },
+    {
+      "img": "000000001296.jpg",
+      "baseline": "A woman holding a cell phone.",
+      "substituted": "A woman holding a cell phone.",
+      "shared_prefix_tokens": 8,
+      "exact_match": true,
+      "n_baseline_tokens": 8,
+      "n_substituted_tokens": 8
+    },
+    {
+      "img": "000000001353.jpg",
+      "baseline": "A group of children riding on a merry go round.",
+      "substituted": "Children on a merry go round.",
+      "shared_prefix_tokens": 0,
+      "exact_match": false,
+      "n_baseline_tokens": 14,
+      "n_substituted_tokens": 9
+    },
+    {
+      "img": "000000001425.jpg",
+      "baseline": "A plate with a sandwich and a bowl of sauce.",
+      "substituted": "A plate with a pastry on it.",
+      "shared_prefix_tokens": 4,
+      "exact_match": false,
+      "n_baseline_tokens": 15,
+      "n_substituted_tokens": 10
+    },
+    {
+      "img": "000000001490.jpg",
+      "baseline": "A person is paddle boarding in the ocean.",
+      "substituted": "A person is paddling on a surfboard in the ocean.",
+      "shared_prefix_tokens": 4,
+      "exact_match": false,
+      "n_baseline_tokens": 12,
+      "n_substituted_tokens": 16
+    },
+    {
+      "img": "000000001503.jpg",
+      "baseline": "A computer desk with two computers and a keyboard.",
+      "substituted": "A computer desk with two laptops and two computer monitors.",
+      "shared_prefix_tokens": 6,
+      "exact_match": false,
+      "n_baseline_tokens": 12,
+      "n_substituted_tokens": 16
+    },
+    {
+      "img": "000000001532.jpg",
+      "baseline": "A freeway with cars and a truck driving on it.",
+      "substituted": "A freeway with cars and trucks driving on it.",
+      "shared_prefix_tokens": 7,
+      "exact_match": false,
+      "n_baseline_tokens": 15,
+      "n_substituted_tokens": 15
+    },
+    {
+      "img": "000000001584.jpg",
+      "baseline": "A red double decker bus.",
+      "substituted": "A red double decker bus.",
+      "shared_prefix_tokens": 8,
+      "exact_match": true,
+      "n_baseline_tokens": 8,
+      "n_substituted_tokens": 8
+    },
+    {
+      "img": "000000001675.jpg",
+      "baseline": "A cat is laying on a laptop.",
+      "substituted": "A cat is laying on a laptop.",
+      "shared_prefix_tokens": 10,
+      "exact_match": true,
+      "n_baseline_tokens": 10,
+      "n_substituted_tokens": 10
+    },
+    {
+      "img": "000000001761.jpg",
+      "baseline": "A plane flying over a bridge.",
+      "substituted": "A plane flying over a bridge.",
+      "shared_prefix_tokens": 8,
+      "exact_match": true,
+      "n_baseline_tokens": 8,
+      "n_substituted_tokens": 8
+    },
+    {
+      "img": "000000001818.jpg",
+      "baseline": "A zebra and a baby zebra.",
+      "substituted": "A zebra.",
+      "shared_prefix_tokens": 4,
+      "exact_match": false,
+      "n_baseline_tokens": 12,
+      "n_substituted_tokens": 6
+    },
+    {
+      "img": "000000001993.jpg",
+      "baseline": "A bedroom with a bed and a chair.",
+      "substituted": "A bedroom with a bed and a chair.",
+      "shared_prefix_tokens": 11,
+      "exact_match": true,
+      "n_baseline_tokens": 11,
+      "n_substituted_tokens": 11
+    },
+    {
+      "img": "000000002006.jpg",
+      "baseline": "A purple bus with a man driving it.",
+      "substituted": "A purple bus with a man driving it.",
+      "shared_prefix_tokens": 11,
+      "exact_match": true,
+      "n_baseline_tokens": 11,
+      "n_substituted_tokens": 11
+    },
+    {
+      "img": "000000002149.jpg",
+      "baseline": "Green apples in a bowl.",
+      "substituted": "Green apples in a bowl.",
+      "shared_prefix_tokens": 9,
+      "exact_match": true,
+      "n_baseline_tokens": 9,
+      "n_substituted_tokens": 9
+    },
+    {
+      "img": "000000002153.jpg",
+      "baseline": "A baseball player swinging a bat.",
+      "substituted": "A baseball player is swinging a bat.",
+      "shared_prefix_tokens": 3,
+      "exact_match": false,
+      "n_baseline_tokens": 9,
+      "n_substituted_tokens": 10
+    },
+    {
+      "img": "000000002157.jpg",
+      "baseline": "A table with a cake and other food items.",
+      "substituted": "A table with a cake and a plate of food.",
+      "shared_prefix_tokens": 7,
+      "exact_match": false,
+      "n_baseline_tokens": 12,
+      "n_substituted_tokens": 13
+    },
+    {
+      "img": "000000002261.jpg",
+      "baseline": "A man is surfing in the ocean.",
+      "substituted": "A man in the ocean.",
+      "shared_prefix_tokens": 2,
+      "exact_match": false,
+      "n_baseline_tokens": 11,
+      "n_substituted_tokens": 7
+    },
+    {
+      "img": "000000002299.jpg",
+      "baseline": "A group of children posing for a picture.",
+      "substituted": "A group of children posing for a picture.",
+      "shared_prefix_tokens": 11,
+      "exact_match": true,
+      "n_baseline_tokens": 11,
+      "n_substituted_tokens": 11
+    },
+    {
+      "img": "000000002431.jpg",
+      "baseline": "A plate of food.",
+      "substituted": "A plate of bread and a wine glass.",
+      "shared_prefix_tokens": 3,
+      "exact_match": false,
+      "n_baseline_tokens": 6,
+      "n_substituted_tokens": 10
+    },
+    {
+      "img": "000000002473.jpg",
+      "baseline": "A skier jumping in the air.",
+      "substituted": "A man is jumping in the air on skis.",
+      "shared_prefix_tokens": 1,
+      "exact_match": false,
+      "n_baseline_tokens": 10,
+      "n_substituted_tokens": 13
+    },
+    {
+      "img": "000000002532.jpg",
+      "baseline": "A person on skis.",
+      "substituted": "A person is skiing in the snow.",
+      "shared_prefix_tokens": 2,
+      "exact_match": false,
+      "n_baseline_tokens": 7,
+      "n_substituted_tokens": 10
+    },
+    {
+      "img": "000000002587.jpg",
+      "baseline": "A donut and a banana.",
+      "substituted": "A banana and a bagel.",
+      "shared_prefix_tokens": 1,
+      "exact_match": false,
+      "n_baseline_tokens": 9,
+      "n_substituted_tokens": 9
+    },
+    {
+      "img": "000000002592.jpg",
+      "baseline": "A cup and a knife.",
+      "substituted": "A knife and a cup with a skull and crossbones on it.",
+      "shared_prefix_tokens": 1,
+      "exact_match": false,
+      "n_baseline_tokens": 8,
+      "n_substituted_tokens": 18
+    },
+    {
+      "img": "000000002685.jpg",
+      "baseline": "People standing around a bar.",
+      "substituted": "People standing around a bar.",
+      "shared_prefix_tokens": 7,
+      "exact_match": true,
+      "n_baseline_tokens": 7,
+      "n_substituted_tokens": 7
+    },
+    {
+      "img": "000000002923.jpg",
+      "baseline": "A field of grass.",
+      "substituted": "A field of grass.",
+      "shared_prefix_tokens": 6,
+      "exact_match": true,
+      "n_baseline_tokens": 6,
+      "n_substituted_tokens": 6
+    },
+    {
+      "img": "000000003156.jpg",
+      "baseline": "A man is fixing a toilet.",
+      "substituted": "A man is sitting on a toilet.",
+      "shared_prefix_tokens": 3,
+      "exact_match": false,
+      "n_baseline_tokens": 10,
+      "n_substituted_tokens": 11
+    },
+    {
+      "img": "000000003255.jpg",
+      "baseline": "People standing on snow.",
+      "substituted": "People standing on snow.",
+      "shared_prefix_tokens": 6,
+      "exact_match": true,
+      "n_baseline_tokens": 6,
+      "n_substituted_tokens": 6
+    },
+    {
+      "img": "000000003501.jpg",
+      "baseline": "A bowl of food with rice and broccoli.",
+      "substituted": "A bowl of food with rice and broccoli.",
+      "shared_prefix_tokens": 13,
+      "exact_match": true,
+      "n_baseline_tokens": 13,
+      "n_substituted_tokens": 13
+    },
+    {
+      "img": "000000003553.jpg",
+      "baseline": "A person is riding a skateboard.",
+      "substituted": "A person is riding a skateboard.",
+      "shared_prefix_tokens": 11,
+      "exact_match": true,
+      "n_baseline_tokens": 11,
+      "n_substituted_tokens": 11
+    },
+    {
+      "img": "000000003661.jpg",
+      "baseline": "A bunch of bananas.",
+      "substituted": "A bunch of bananas.",
+      "shared_prefix_tokens": 7,
+      "exact_match": true,
+      "n_baseline_tokens": 7,
+      "n_substituted_tokens": 7
+    },
+    {
+      "img": "000000003845.jpg",
+      "baseline": "A plate of food.",
+      "substituted": "A plate of food with rice and vegetables.",
+      "shared_prefix_tokens": 4,
+      "exact_match": false,
+      "n_baseline_tokens": 6,
+      "n_substituted_tokens": 11
+    },
+    {
+      "img": "000000003934.jpg",
+      "baseline": "A girl playing a video game.",
+      "substituted": "A girl playing a video game.",
+      "shared_prefix_tokens": 8,
+      "exact_match": true,
+      "n_baseline_tokens": 8,
+      "n_substituted_tokens": 8
+    },
+    {
+      "img": "000000004134.jpg",
+      "baseline": "Two men shaking hands.",
+      "substituted": "Two men shaking hands.",
+      "shared_prefix_tokens": 7,
+      "exact_match": true,
+      "n_baseline_tokens": 7,
+      "n_substituted_tokens": 7
+    },
+    {
+      "img": "000000004395.jpg",
+      "baseline": "A man wearing a yellow shirt and a brown tie.",
+      "substituted": "A man wearing a tie.",
+      "shared_prefix_tokens": 5,
+      "exact_match": false,
+      "n_baseline_tokens": 14,
+      "n_substituted_tokens": 8
+    },
+    {
+      "img": "000000004495.jpg",
+      "baseline": "A room with a television and a couch.",
+      "substituted": "A living room with a television and two couches.",
+      "shared_prefix_tokens": 1,
+      "exact_match": false,
+      "n_baseline_tokens": 11,
+      "n_substituted_tokens": 13
+    },
+    {
+      "img": "000000004765.jpg",
+      "baseline": "A man surfing in the ocean.",
+      "substituted": "A person surfing.",
+      "shared_prefix_tokens": 1,
+      "exact_match": false,
+      "n_baseline_tokens": 10,
+      "n_substituted_tokens": 7
+    },
+    {
+      "img": "000000004795.jpg",
+      "baseline": "A cat is sitting in front of a computer screen.",
+      "substituted": "A cat looking at a computer screen.",
+      "shared_prefix_tokens": 2,
+      "exact_match": false,
+      "n_baseline_tokens": 12,
+      "n_substituted_tokens": 9
+    },
+    {
+      "img": "000000005001.jpg",
+      "baseline": "A man cutting a ribbon with a child.",
+      "substituted": "A group of people cutting a ribbon.",
+      "shared_prefix_tokens": 1,
+      "exact_match": false,
+      "n_baseline_tokens": 11,
+      "n_substituted_tokens": 10
+    },
+    {
+      "img": "000000005037.jpg",
+      "baseline": "A bus on a street.",
+      "substituted": "A bus on the road.",
+      "shared_prefix_tokens": 3,
+      "exact_match": false,
+      "n_baseline_tokens": 7,
+      "n_substituted_tokens": 7
+    },
+    {
+      "img": "000000005060.jpg",
+      "baseline": "A man taking a picture of himself in a mirror.",
+      "substituted": "A man taking a picture of himself in a mirror.",
+      "shared_prefix_tokens": 12,
+      "exact_match": true,
+      "n_baseline_tokens": 12,
+      "n_substituted_tokens": 12
+    }
+  ]
+}
