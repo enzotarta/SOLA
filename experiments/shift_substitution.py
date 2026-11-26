@@ -151,8 +151,8 @@ def extract_offset(model, layer, head, dataloader, n_batches, config,
     fp_norm = fp / (fp.sum() + 1e-12)
     dominant_mass = float(fp_norm.max())
 
-    # Consistency: for what fraction of (image, query) pairs is the per-instance
-    # argmax exactly at the dominant offset?
+    # Consistency: fraction of (image, query) pairs whose per-instance argmax
+    # is the dominant offset
     target_idx_per_q = np.zeros(H * W, dtype=int)
     for q_idx, (qy, qx) in enumerate(coords):
         ty, tx = qy + dy, qx + dx

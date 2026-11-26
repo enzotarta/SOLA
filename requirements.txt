@@ -8,6 +8,7 @@ Pillow
 datasets          # tiny-ImageNet, for the taxonomy and the shift controls
 transformers      # SigLIP text tower, BLIP and LLaVA
 sentencepiece     # SigLIP tokenizer
+protobuf          # SigLIP tokenizer
 accelerate        # LLaVA
 triton            # fused kernels
 nvidia-ml-py      # energy benchmark

@@ -119,7 +119,7 @@ def fingerprint(attn_per_query: np.ndarray, H: int, W: int,
     # Diagnostics
     diag = {}
 
-    # Self-attention mass: how much do queries attend to themselves?
+    # Self-attention mass: attention of each query to itself
     self_mass = np.array([attn_per_query[i, q, q]
                           for i in range(n_img) for q in range(n_q)])
     diag["self_mass_mean"] = float(self_mass.mean())

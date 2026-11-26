@@ -7,7 +7,7 @@ the boundary, which is what shift_substitution implements. Checked on synthetic
 value tensors.
 
 Other tests:
-  - identity kernel (delta at origin) reproduces V exactly
+  - identity kernel (delta at origin) reproduces V to float precision
   - normalized Gaussian kernel preserves mean across queries
   - off-grid-only kernel triggers the self-fallback path
 """
@@ -42,7 +42,7 @@ def fast_shift_with_self_at_boundary(v_spatial: torch.Tensor, dy: int, dx: int,
 
 
 def test_delta_kernel_matches_shift():
-    """Delta kernel substitution reproduces shift_substitution exactly."""
+    """Delta kernel substitution matches shift_substitution to float precision."""
     H, W = 14, 14
     B, D = 2, 8
     n_extra = 1

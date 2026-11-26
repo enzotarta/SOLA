@@ -14,7 +14,8 @@ batch assign each head to an operator.
 pip install -r requirements.txt
 ```
 
-The release was tested with Python 3.10, PyTorch 2.11 and timm 1.0.27 on RTX 2080 and 2080 Ti cards.
+The release was tested with Python 3.10, PyTorch 2.11 and timm 1.0.27 on RTX 2080, RTX 2080 Ti and
+Tesla P100 cards, and the Triton scripts on RTX 2080 Ti and RTX 3090 cards.
 
 ## Data
 
@@ -99,19 +100,21 @@ Figures: `make_taxonomy_figure.py`, `make_escape_mass_figure.py` (input from `es
 
 ## Commands
 
-`M` is a timm model name with its tag, `T` the taxonomy file of that model, `D` its `fixed_target_*`
+`M` is a timm model name with its tag, `T` the Stage-1 taxonomy file of that model
+(`results/taxonomy_X_with_other.json`, see Two-stage taxonomy below) and `D` its `fixed_target_*`
 file. Commands of experiments that were run without a job script are rebuilt from the parameters
 stored in their result files.
 
 Taxonomy, residuals and spectrum. `operator_taxonomy.py` writes the Stage-1 taxonomy;
 `redistribute_other.py` keeps it as `taxonomy_*_with_other.json` and rewrites `taxonomy_*.json`
-with Stage 2.
+with Stage 2. `escape_mass_sweep.py` writes the input of the escape-mass figure.
 
 ```
 python experiments/operator_taxonomy.py --model M --batches 4 --batch-size 32 --out results/taxonomy_X.json
-python experiments/fixed_target_diagnostic.py --model M --taxonomy T --batches 4 --batch-size 32 --out results/fixed_target_X.json
-python experiments/svd_spectrum_diagnostic.py --model M --taxonomy T --out results/svd_spectrum_X.json
+python experiments/fixed_target_diagnostic.py --model M --taxonomy results/taxonomy_X.json --batches 4 --batch-size 32 --out results/fixed_target_X.json
+python experiments/svd_spectrum_diagnostic.py --model M --taxonomy results/taxonomy_X.json --out results/svd_spectrum_X.json
 python experiments/redistribute_other.py
+python experiments/escape_mass_sweep.py --models deit_tiny_patch16_224 vit_base_patch16_224 vit_base_patch16_clip_224.openai --batches 8 --out-dir results
 ```
 
 Group tests, with random-head and third controls. By default they evaluate 156 batches of 64: the
@@ -148,7 +151,7 @@ Rank curves and the `other` pool:
 
 ```
 python experiments/rank_curve_near_global.py --model M --taxonomy T --category near_global --metric top1 --ks 1 2 3 5 10 20 50 --n-batches 782 --batch-size 64 --imagenet-val-dir data/imagenet/val --out results/rank_curve_vitb_ng.json
-python experiments/rank_curve_near_global.py --model M --taxonomy T_with_other --category other --metric {cls-cos,top1} --ks 10 30 50 100 150 196 --n-batches 156 --batch-size 64 --imagenet-val-dir data/imagenet/val --out results/rank_curve_X_other.json
+python experiments/rank_curve_near_global.py --model M --taxonomy T --category other --metric {cls-cos,top1} --ks 10 30 50 100 150 196 --n-batches 156 --batch-size 64 --imagenet-val-dir data/imagenet/val --out results/rank_curve_X_other.json
 python experiments/other_rank_sweep.py --eval-batch-size 64 --n-eval-batches-top1 782 --n-eval-batches-cos 156 --ks 30 50 --imagenet-val-dir data/imagenet/val --out results/other_rank_sweep.json
 python experiments/mae_other_rank_test.py --ckpt checkpoints/mae_tiny_scratch_encoder_epoch99.pth --analysis-json results/emergence/mae_tiny/epoch_99.json --n-batches 156 --batch-size 64
 ```
@@ -158,11 +161,11 @@ Behaviour, faithfulness, path patching, corruptions:
 ```
 python experiments/behavioral_mapping.py --model M --taxonomy T --diag D --out results/behavioral_X.json
 python experiments/analyze_behavioral.py --input results/behavioral_X.json
-python experiments/faithfulness_probe.py --model M --taxonomy T --diag D --batch-size 256 --out results/faithfulness_X.json
-python experiments/circuit_composition.py --model M --taxonomy T --batch-size 256 --out results/circuit_composition_X.json
+python experiments/faithfulness_probe.py --model M --taxonomy T --diag D --batch-size 64 --out results/faithfulness_X.json
+python experiments/circuit_composition.py --model M --taxonomy T --batch-size 64 --out results/circuit_composition_X.json
 python experiments/circuit_composition_full.py --model M --taxonomy T --diag D --operator broadcast --r-thresh 0.4 --batch-size 64 --n-batches 4 --out results/circuit_composition_vitb_broadcast.json
 python experiments/circuit_composition_full.py --model M --taxonomy T --diag D --operator rank10 --rank-k 10 --batch-size 64 --n-batches 4 --out results/circuit_composition_vitb_rank10.json
-python experiments/substitution_robustness.py --model M --taxonomy T --diag D --max-batches 156 --out results/robustness_X.json
+python experiments/substitution_robustness.py --model M --taxonomy T --diag D --max-batches 156 --corruptions clean,gauss_noise_0.05,gauss_blur_2,contrast_0.5 --out results/robustness_X.json
 ```
 
 Speed and energy (the Triton path needs a CUDA GPU):
@@ -249,8 +252,11 @@ indices of the vision tower of `llava-hf/llava-1.5-7b-hf`.
 
 **Two-stage taxonomy.** Stage 1 (`operator_taxonomy.py`) leaves some heads in an `other` class.
 Stage 2 (`redistribute_other.py`) sends `other` heads with eff_rank_90 at most 40 to near-global and
-the rest to diffuse-local. The `*_with_other.json` files are Stage 1; tables on the `other` pool
-(Tables 17, 18, 25, 26) read them.
+the rest to diffuse-local. The `*_with_other.json` files are Stage 1. The stored residuals, spectra,
+group tests, probes and rank curves were computed on Stage 1, so their commands take `T`; the
+category counts of Tables 5 and 29 and the taxonomy figure use Stage 2. With a Stage-2 file, tests
+on near-global or diffuse-local heads select more heads (71 instead of 68 near-global heads on
+ViT-B/16 ImageNet-21k FT) and do not reproduce the stored numbers.
 
 **Residual gate.** Broadcast and rank-k group tests keep the heads of a category with
 `r_abs_mean < 0.4` in the `fixed_target_*.json` file: the across-image residual, the L1 distance of
@@ -259,9 +265,11 @@ Proposition 2 uses the within-image residual of the rows from their mean row. `s
 computes both, and `reproduce.py --gate r_row` selects heads with the within-image one.
 
 **Rank-k.** The per-image rank-k substitute uses `torch.svd_lowrank(q=k+4, niter=2)`, which is
-randomized and not seeded, so rank-k rows change slightly between runs; `reproduce.py --exact-svd`
-uses a full SVD. In the full substitution, k_h = max(10, ceil(eff_rank_tau)), at most 200, with
-tau = 0.9 unless stated, and heads of the three shift categories use their mean kernel.
+randomized and not seeded, so rank-k rows change between runs; `reproduce.py --exact-svd` uses a
+full SVD. In the full substitution, k_h = max(10, ceil(eff_rank_tau)), at most 200, with tau = 0.9
+unless stated, and heads of the three shift categories use their mean kernel. On another GPU and
+software stack, rank-k rows reproduced to within 6e-3 in cosine and 0.55 points in top-1; ten
+runs of the full substitution on DeiT-Tiny on one machine gave -1.15 to -1.46 points (stored: -1.01).
 
 **Intervals.** The +/- next to a top-1 change is 1.96 sqrt(p(1-p)/n), with p the baseline top-1 on
 the same images, in points. Random-head controls give the mean and standard deviation over 3 seeds.
@@ -270,7 +278,21 @@ the same images, in points. Random-head controls give the mean and standard devi
 without the residual gate, on its own taxonomy, so their head counts can differ from Table 5.
 
 **Timing and energy.** Table 13 was measured on an RTX 3090 and an L40S (`wallclock_*_3090.json`,
-`wallclock_*_L40S.json`); `energy_benchmark.py` reads the board power through NVML.
+`wallclock_*_L40S.json`); `energy_benchmark.py` reads the board power through NVML. Both depend on
+the GPU and its load: on another RTX 3090 the end-to-end Triton speed-up was 1.06x for DeiT-Tiny and
+1.01x for ViT-B/16, against 1.11x and 1.04x in the stored files.
+
+**Triton tests.** On GPUs of compute capability 8.0 and newer, Triton runs the fp32 attention test
+in TF32, so that test uses a tolerance of 5e-3 there instead of 1e-4.
+
+**BLIP.** `cross_attention_eval.py` loads the safetensors weights of
+`Salesforce/blip-image-captioning-base`, which the Hugging Face Hub serves from a conversion
+branch, so the first run needs network access. `results/taxonomy_blip_crossattn.json` is not written
+by a script: for the taxonomy figure, it lists as fixed-target the 144 decoder cross-attention heads,
+all below the residual threshold in `cross_attention_blip_n100.json`.
+
+**Segmentation probe.** `coco_seg_probe.py` trains a linear head without a fixed seed, so reruns
+give mIoU values within about 0.01 of the stored ones.
 
 **Not in this release.** No result file was kept for the SigLIP-SO/14 column of Table 6 or for the
 fp16 rows of Table 14. Table 34 is printed by `test_triton_shift.py`.

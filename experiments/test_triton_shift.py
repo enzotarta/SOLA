@@ -149,7 +149,9 @@ def test_attention():
         ref = F.scaled_dot_product_attention(Q, K, V, scale=scale)
 
         max_diff = (O - ref).abs().max().item()
-        tol = 1e-2 if dtype == torch.float16 else 1e-4
+        # On compute capability 8.0 and newer, tl.dot runs fp32 inputs in TF32.
+        tf32 = torch.cuda.get_device_capability()[0] >= 8
+        tol = 1e-2 if dtype == torch.float16 else (5e-3 if tf32 else 1e-4)
         ok = max_diff <= tol
         print(f"[attn]  B={B} H={H_heads} Dh={Dh} N={N:>5d} "
               f"dtype={str(dtype):>15s}: max_diff={max_diff:.3e}  "

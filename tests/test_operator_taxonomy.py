@@ -323,7 +323,7 @@ def test_l1_residual_distinguishes_fixed_vs_random():
     random_ = make_random_attn(H, W, n_img=2)
     _, diag_fixed = compute_diagnostics(fixed, H, W, K=5)
     _, diag_rand = compute_diagnostics(random_, H, W, K=5)
-    # Fixed kernel: per-query == mean kernel exactly (no variation),
+    # Fixed kernel: every per-query kernel equals the mean kernel (no variation),
     # so interior L1 residual is ~0.
     assert diag_fixed.kernel_l1_residual_mean < 0.05, (
         f"fixed l1 = {diag_fixed.kernel_l1_residual_mean:.3f}")
