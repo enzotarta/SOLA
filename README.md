@@ -1,6 +1,21 @@
 # SOLA: A Structured Operator Library for Attention in Pretrained Vision Transformers
 
-Code and result files for the NeurIPS 2026 paper by Enzo Tartaglione and Vito Paolo Pastore.
+<p align="center">
+  <img alt="NeurIPS 2026" src="https://img.shields.io/badge/NeurIPS-2026-68448B">
+  <img alt="Python 3.10" src="https://img.shields.io/badge/Python-3.10-3776AB?logo=python&logoColor=white">
+  <img alt="PyTorch 2.11" src="https://img.shields.io/badge/PyTorch-2.11-EE4C2C?logo=pytorch&logoColor=white">
+  <img alt="timm 1.0.27" src="https://img.shields.io/badge/timm-1.0.27-FFD21E">
+  <a href="LICENSE"><img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-green"></a>
+</p>
+
+Code and result files for the NeurIPS 2026 paper by Enzo Tartaglione (Télécom Paris, Institut
+Polytechnique de Paris) and Vito Paolo Pastore (University of Genoa, Istituto Italiano di Tecnologia).
+
+<p align="center">
+  <img src="assets/teaser.png" alt="The attention scores of a trained head are replaced by one of three operators: broadcast, shift or rank-k aggregator" width="640">
+</p>
+<p align="center"><em>The softmax(QK<sup>T</sup>) attention-score matrix of a trained head is replaced, in place, by one of
+three closed-form operators: broadcast, shift and rank-k aggregator.</em></p>
 
 SOLA replaces attention heads of a frozen timm ViT with closed-form operators, without training:
 a fixed 2D kernel for shift heads (Proposition 1), a per-image broadcast row for fixed-target
@@ -36,6 +51,7 @@ results/         JSON files behind the tables of the paper
 results/emergence/   per-epoch analyses of the two models trained from scratch (Sec. 4.2)
 checkpoints/     epoch-99 weights of those two models
 tests/           unit tests and a smoke test
+assets/          figure of this README
 reproduce.py     end-to-end example on one backbone
 ```
 
@@ -101,13 +117,16 @@ Figures: `make_taxonomy_figure.py`, `make_escape_mass_figure.py` (input from `es
 ## Commands
 
 `M` is a timm model name with its tag, `T` the Stage-1 taxonomy file of that model
-(`results/taxonomy_X_with_other.json`, see Two-stage taxonomy below) and `D` its `fixed_target_*`
-file. Commands of experiments that were run without a job script are rebuilt from the parameters
-stored in their result files.
+(`results/taxonomy_X_with_other.json`) and `D` its `fixed_target_*` file. The stored group tests,
+probes and rank curves were run on Stage 1; a Stage-2 file selects different near-global and
+diffuse-local heads. Commands of experiments that were run without a job script are rebuilt from
+the parameters stored in their result files.
 
-Taxonomy, residuals and spectrum. `operator_taxonomy.py` writes the Stage-1 taxonomy;
-`redistribute_other.py` keeps it as `taxonomy_*_with_other.json` and rewrites `taxonomy_*.json`
-with Stage 2. `escape_mass_sweep.py` writes the input of the escape-mass figure.
+Taxonomy, residuals and spectrum. `operator_taxonomy.py` writes the Stage-1 taxonomy, which leaves
+some heads in an `other` class; `redistribute_other.py` keeps it as `taxonomy_*_with_other.json` and
+rewrites `taxonomy_*.json` with Stage 2, which sends `other` heads with eff_rank_90 at most 40 to
+near-global and the rest to diffuse-local. `escape_mass_sweep.py` writes the input of the
+escape-mass figure.
 
 ```
 python experiments/operator_taxonomy.py --model M --batches 4 --batch-size 32 --out results/taxonomy_X.json
@@ -193,109 +212,6 @@ python experiments/train_mae_tiny.py --data-dir IMAGENET_ROOT --output output/ma
 python experiments/analyze_checkpoint.py --model deit_tiny_patch16_224 --checkpoint C --imagenet-val-dir data/imagenet/val --batch-size 32 --n-batches 4 --K 5 --out results/emergence/deit_tiny/epoch_N.json
 python experiments/analyze_checkpoint.py --model vit_tiny_patch16_224 --checkpoint C --imagenet-val-dir data/imagenet/val --batch-size 32 --n-batches 4 --K 5 --out results/emergence/mae_tiny/epoch_N.json
 ```
-
-## Protocol notes
-
-These are the settings behind the numbers in `results/` and in the paper. The defaults of the
-scripts follow them; the options that change them are named below.
-
-**Evaluation images.** ImageNet rows with n = 9,984 use the first 9,984 validation images in class
-order (156 batches of 64 from an unshuffled `ImageFolder`, classes 0 to 199). Rows with n = 50,000
-use the whole set. The CLS cos-sim of the full substitution uses the first 2,048 images, and the
-SigLIP zero-shot rows the first 10,016 (the loader stops after the batch that reaches 10,000).
-tiny-ImageNet top-1 rows use the 9,100 validation images whose class maps to an ImageNet-1k class.
-`zeroshot_siglip_eval.py --order random` and `reproduce.py --eval-order random` draw a seeded
-uniform subset instead.
-
-**Preprocessing.** Every ImageNet loader applies Resize(256, bicubic), CenterCrop(224) and the
-ImageNet mean and standard deviation, for every model, including those trained with other
-statistics (the augreg ViTs, CLIP, SigLIP). tiny-ImageNet images are resized to 224 and
-center-cropped, with the same statistics. The SigLIP zero-shot script is the exception: it resizes
-to 224x224 with mean = std = 0.5. The environment variable `SOLA_PREPROCESS` changes the loaders:
-`siglip` for that transform, or a timm model name for the data config of that model. Scripts that
-run DINOv2 at its native 518 pixels (`tau_sweep.py --mode dinov2`, and `fill_cells.py` and
-`rank_curve_near_global.py` without `--image-size`) keep Resize(256) before the 518 center crop, so
-each image sits in the middle of a zero-padded frame.
-
-**CLS cos-sim.** Cosine similarity between the first output token of `forward_features` with and
-without the substitution, averaged over images. This is the class token for every backbone except
-SigLIP, which has no class token: for SigLIP it is the first patch token. With
-`SOLA_EMBEDDING=pooled`, models without a class token use the output of their pooling head instead.
-
-**Calibration images.** `operator_taxonomy.py`, `fixed_target_diagnostic.py` and
-`per_image_shift_diagnostic.py` use the first 128 images of the tiny-ImageNet validation split.
-`svd_spectrum_diagnostic.py` uses the first 128 ImageNet val images in class order by default; the
-stored spectra of ViT-B/16 ImageNet-21k FT, MAE, DINO, DINOv2, CLIP and SigLIP were computed with
-`--source tiny-imagenet`, those of DeiT-Tiny, DeiT-Small, ViT-S/16 and ViT-B/16 ImageNet-1k with the
-default. `fill_cells.py` and `tau_sweep.py` recompute the taxonomy on the first `--n-cal` ImageNet
-val images, which for 32 images are all of class 0. `analyze_checkpoint.py` uses the first 128
-ImageNet val images.
-
-**Model weights.** DeiT-Tiny `deit_tiny_patch16_224` (`.fb_in1k`), DeiT-Small
-`deit_small_patch16_224`, ViT-S/16 `vit_small_patch16_224.augreg_in21k_ft_in1k`, ViT-B/16
-ImageNet-1k `vit_base_patch16_224.augreg_in1k`, ViT-B/16 ImageNet-21k FT
-`vit_base_patch16_224.augreg2_in21k_ft_in1k` (recorded as `vit_base_patch16_224` in some result
-files, which resolves to the same weights), MAE `vit_base_patch16_224.mae`, DINO
-`vit_base_patch16_224.dino`, DINOv2 `vit_base_patch14_dinov2.lvd142m`, CLIP
-`vit_base_patch16_clip_224.openai`. The SigLIP result files record the untagged name
-`vit_base_patch16_siglip_224`, which resolves to different weights in different timm versions.
-The stored SigLIP taxonomy, residuals, spectrum, kernel and broadcast rows are reproduced with
-`vit_base_patch16_siglip_224.v2_webli`. The zero-shot rows and the full-substitution CLS cos-sim
-are reproduced with `vit_base_patch16_siglip_224.webli`, the encoder that matches the HF text tower
-`google/siglip-base-patch16-224`, using the stored SigLIP taxonomy and spectrum.
-The SigLIP cells of Table 27 from `fill_cells.py`, and the SigLIP rows of Tables 18 and 26 with the
-stored Stage-1 taxonomy, are reproduced with `.webli` as well.
-`taxonomy_clip_L.json` records the untagged `vit_large_patch14_clip_224`, which now resolves to
-`.laion2b_ft_in12k_in1k`; recomputing with that tag gives the stored category for 383 of the 384
-heads. `llava_substitution_eval.py` installs the shift kernels of that file at the same (layer, head)
-indices of the vision tower of `llava-hf/llava-1.5-7b-hf`.
-
-**Two-stage taxonomy.** Stage 1 (`operator_taxonomy.py`) leaves some heads in an `other` class.
-Stage 2 (`redistribute_other.py`) sends `other` heads with eff_rank_90 at most 40 to near-global and
-the rest to diffuse-local. The `*_with_other.json` files are Stage 1. The stored residuals, spectra,
-group tests, probes and rank curves were computed on Stage 1, so their commands take `T`; the
-category counts of Tables 5 and 29 and the taxonomy figure use Stage 2. With a Stage-2 file, tests
-on near-global or diffuse-local heads select more heads (71 instead of 68 near-global heads on
-ViT-B/16 ImageNet-21k FT) and do not reproduce the stored numbers.
-
-**Residual gate.** Broadcast and rank-k group tests keep the heads of a category with
-`r_abs_mean < 0.4` in the `fixed_target_*.json` file: the across-image residual, the L1 distance of
-A(x) from its mean over images, halved and averaged over queries and images. The bound of
-Proposition 2 uses the within-image residual of the rows from their mean row. `sola/diagnostics.py`
-computes both, and `reproduce.py --gate r_row` selects heads with the within-image one.
-
-**Rank-k.** The per-image rank-k substitute uses `torch.svd_lowrank(q=k+4, niter=2)`, which is
-randomized and not seeded, so rank-k rows change between runs; `reproduce.py --exact-svd` uses a
-full SVD. In the full substitution, k_h = max(10, ceil(eff_rank_tau)), at most 200, with tau = 0.9
-unless stated, and heads of the three shift categories use their mean kernel. On another GPU and
-software stack, rank-k rows reproduced to within 6e-3 in cosine and 0.55 points in top-1; ten
-runs of the full substitution on DeiT-Tiny on one machine gave -1.15 to -1.46 points (stored: -1.01).
-
-**Intervals.** The +/- next to a top-1 change is 1.96 sqrt(p(1-p)/n), with p the baseline top-1 on
-the same images, in points. Random-head controls give the mean and standard deviation over 3 seeds.
-
-**Verified heads (Table 27).** Cells with a dagger come from `fill_cells.py`: a whole category,
-without the residual gate, on its own taxonomy, so their head counts can differ from Table 5.
-
-**Timing and energy.** Table 13 was measured on an RTX 3090 and an L40S (`wallclock_*_3090.json`,
-`wallclock_*_L40S.json`); `energy_benchmark.py` reads the board power through NVML. Both depend on
-the GPU and its load: on another RTX 3090 the end-to-end Triton speed-up was 1.06x for DeiT-Tiny and
-1.01x for ViT-B/16, against 1.11x and 1.04x in the stored files.
-
-**Triton tests.** On GPUs of compute capability 8.0 and newer, Triton runs the fp32 attention test
-in TF32, so that test uses a tolerance of 5e-3 there instead of 1e-4.
-
-**BLIP.** `cross_attention_eval.py` loads the safetensors weights of
-`Salesforce/blip-image-captioning-base`, which the Hugging Face Hub serves from a conversion
-branch, so the first run needs network access. `results/taxonomy_blip_crossattn.json` is not written
-by a script: for the taxonomy figure, it lists as fixed-target the 144 decoder cross-attention heads,
-all below the residual threshold in `cross_attention_blip_n100.json`.
-
-**Segmentation probe.** `coco_seg_probe.py` trains a linear head without a fixed seed, so reruns
-give mIoU values within about 0.01 of the stored ones.
-
-**Not in this release.** No result file was kept for the SigLIP-SO/14 column of Table 6 or for the
-fp16 rows of Table 14. Table 34 is printed by `test_triton_shift.py`.
 
 ## Checkpoints
 
