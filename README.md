@@ -9,7 +9,8 @@
 </p>
 
 Code and result files for the NeurIPS 2026 paper by Enzo Tartaglione (Télécom Paris, Institut
-Polytechnique de Paris) and Vito Paolo Pastore (University of Genoa, Istituto Italiano di Tecnologia).
+Polytechnique de Paris, CNR-ISASI) and Vito Paolo Pastore (University of Genoa, Istituto Italiano di
+Tecnologia).
 Paper and poster: [NeurIPS 2026 page](https://nips.cc/virtual/2026/loc/paris/poster/149135).
 
 <p align="center">

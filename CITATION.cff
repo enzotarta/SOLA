@@ -4,7 +4,7 @@ title: "SOLA: A Structured Operator Library for Attention in Pretrained Vision T
 authors:
   - family-names: Tartaglione
     given-names: Enzo
-    affiliation: "LTCI, Télécom Paris, Institut Polytechnique de Paris"
+    affiliation: "LTCI, Télécom Paris, Institut Polytechnique de Paris; CNR-ISASI"
   - family-names: Pastore
     given-names: Vito Paolo
     affiliation: "MaLGa-DIBRIS, University of Genoa"
