@@ -1,7 +1,7 @@
 # SOLA: A Structured Operator Library for Attention in Pretrained Vision Transformers
 
 <p align="center">
-  <img alt="NeurIPS 2026" src="https://img.shields.io/badge/NeurIPS-2026-68448B">
+  <a href="https://nips.cc/virtual/2026/loc/paris/poster/149135"><img alt="NeurIPS 2026" src="https://img.shields.io/badge/NeurIPS-2026-68448B"></a>
   <img alt="Python 3.10" src="https://img.shields.io/badge/Python-3.10-3776AB?logo=python&logoColor=white">
   <img alt="PyTorch 2.11" src="https://img.shields.io/badge/PyTorch-2.11-EE4C2C?logo=pytorch&logoColor=white">
   <img alt="timm 1.0.27" src="https://img.shields.io/badge/timm-1.0.27-FFD21E">
@@ -10,6 +10,7 @@
 
 Code and result files for the NeurIPS 2026 paper by Enzo Tartaglione (Télécom Paris, Institut
 Polytechnique de Paris) and Vito Paolo Pastore (University of Genoa, Istituto Italiano di Tecnologia).
+Paper and poster: [NeurIPS 2026 page](https://nips.cc/virtual/2026/loc/paris/poster/149135).
 
 <p align="center">
   <img src="assets/teaser.png" alt="The attention scores of a trained head are replaced by one of three operators: broadcast, shift or rank-k aggregator" width="640">
